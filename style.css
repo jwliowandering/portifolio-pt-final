@@ -1,0 +1,1035 @@
+/* ==============================
+   JULIO MILHEIRO MACHADO
+   PORTFÓLIO 2026
+   DARK / JAPANESE MINIMALISM
+============================== */
+
+/* ---------- VARIÁVEIS ---------- */
+
+:root {
+    --black: #050505;
+    --dark: #0a0a0a;
+    --card: #101010;
+    --card-hover: #161616;
+
+    --white: #eeeeee;
+    --silver: #bcbcbc;
+    --gray: #777777;
+    --muted: #555555;
+
+    --border: rgba(255, 255, 255, 0.10);
+    --border-hover: rgba(255, 255, 255, 0.28);
+
+    --glow: 0 0 22px rgba(255, 255, 255, 0.055);
+    --glow-strong: 0 0 28px rgba(255, 255, 255, 0.11);
+}
+
+
+/* ---------- RESET ---------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 30px;
+}
+
+body {
+    min-height: 100vh;
+    background:
+        radial-gradient(ellipse at 50% 0%, rgba(255, 255, 255, 0.045), transparent 38%),
+        var(--black);
+
+    color: var(--white);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.7;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+::selection {
+    background: var(--white);
+    color: var(--black);
+}
+
+
+/* ---------- CAPA ---------- */
+
+.topo {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 680px;
+    overflow: hidden;
+
+    background:
+        radial-gradient(ellipse at 75% 45%, rgba(255, 255, 255, 0.075), transparent 35%),
+        linear-gradient(135deg, #080808, #030303 70%);
+
+    border-bottom: 1px solid var(--border);
+}
+
+.navegacao {
+    width: min(1100px, 90%);
+    margin: 0 auto;
+    padding: 28px 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-bottom: 1px solid var(--border);
+    z-index: 2;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -2px;
+}
+
+.logo span,
+.hero h1 span {
+    color: var(--gray);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.nav-links a {
+    color: var(--gray);
+    font-size: 0.72rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: color 0.25s, text-shadow 0.25s;
+}
+
+.nav-links a:hover {
+    color: var(--white);
+    text-shadow: 0 0 12px rgba(255, 255, 255, 0.45);
+}
+
+.hero {
+    width: min(1100px, 90%);
+    margin: auto;
+    padding: 110px 0 100px;
+    z-index: 1;
+}
+
+.sobre-titulo {
+    display: inline-block;
+    margin-bottom: 25px;
+
+    color: var(--gray);
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 5px;
+}
+
+.hero h1 {
+    max-width: 850px;
+    font-size: clamp(3rem, 8vw, 6.8rem);
+    font-weight: 600;
+    line-height: 0.98;
+    letter-spacing: -5px;
+}
+
+.linha-hero {
+    width: 75px;
+    height: 1px;
+    margin: 35px 0 22px;
+    background: var(--silver);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.45);
+}
+
+.subtitulo {
+    color: var(--silver);
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.descricao-hero {
+    margin-top: 5px;
+    color: var(--gray);
+    font-size: 0.85rem;
+}
+
+.dados-capa {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-top: 28px;
+
+    color: var(--muted);
+    font-size: 0.65rem;
+    letter-spacing: 1px;
+}
+
+.dados-capa b {
+    color: var(--silver);
+    font-weight: 500;
+}
+
+.botao {
+    display: inline-flex;
+    align-items: center;
+    gap: 22px;
+
+    margin-top: 38px;
+    padding: 13px 19px;
+
+    border: 1px solid var(--border-hover);
+    border-radius: 3px;
+
+    color: var(--white);
+    font-size: 0.68rem;
+    letter-spacing: 1.5px;
+
+    transition: background 0.25s, box-shadow 0.25s, transform 0.25s;
+}
+
+.botao:hover {
+    background: rgba(255, 255, 255, 0.07);
+    box-shadow: var(--glow-strong);
+    transform: translateY(-3px);
+}
+
+.botao span {
+    color: var(--silver);
+    font-size: 1rem;
+}
+
+.hero-kanji {
+    position: absolute;
+    right: 8%;
+    top: 33%;
+
+    color: rgba(255, 255, 255, 0.035);
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: clamp(9rem, 22vw, 19rem);
+    font-weight: 300;
+    line-height: 1;
+
+    pointer-events: none;
+    user-select: none;
+}
+
+.hero-indicador {
+    position: absolute;
+    right: 5%;
+    bottom: 35px;
+
+    color: var(--gray);
+    font-size: 0.7rem;
+    letter-spacing: 3px;
+}
+
+.hero-indicador span {
+    color: var(--muted);
+}
+
+
+/* ---------- CONTEÚDO ---------- */
+
+.conteudo {
+    width: min(1100px, 90%);
+    margin: 90px auto;
+}
+
+.secao {
+    position: relative;
+    overflow: hidden;
+
+    margin-bottom: 35px;
+    padding: 45px;
+
+    background:
+        linear-gradient(145deg, rgba(255, 255, 255, 0.025), transparent 45%),
+        var(--dark);
+
+    border: 1px solid var(--border);
+    border-radius: 8px;
+
+    box-shadow: var(--glow);
+    animation: fadeInUp 0.8s ease both;
+}
+
+.secao::after {
+    content: "無";
+    position: absolute;
+    top: 18px;
+    right: 25px;
+
+    color: rgba(255, 255, 255, 0.025);
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 300;
+
+    pointer-events: none;
+    user-select: none;
+}
+
+.secao-topo {
+    position: relative;
+    z-index: 1;
+
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+
+    margin-bottom: 32px;
+    padding-bottom: 20px;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.numero {
+    padding-top: 5px;
+    color: var(--muted);
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+}
+
+.secao h2 {
+    color: var(--white);
+    font-size: clamp(1.35rem, 3vw, 1.8rem);
+    font-weight: 500;
+    letter-spacing: -0.7px;
+    line-height: 1.3;
+}
+
+/* Subtítulo japonês abaixo do título em português */
+
+.jp-label {
+    display: block;
+    margin-top: 7px;
+
+    color: #777777;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 400;
+    letter-spacing: 2px;
+    line-height: 1.6;
+}
+
+.secao p {
+    margin-bottom: 15px;
+    color: var(--silver);
+    font-size: 0.92rem;
+}
+
+.secao b {
+    color: var(--white);
+    font-weight: 500;
+}
+
+.secao h3 {
+    margin: 18px 0 10px;
+    color: var(--white);
+    font-size: 1.15rem;
+    font-weight: 500;
+}
+
+.secao h4 {
+    margin: 18px 0 8px;
+    color: var(--silver);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.secao a:not(.indice-grid a) {
+    color: var(--silver);
+    border-bottom: 1px solid var(--muted);
+    transition: color 0.25s, border-color 0.25s;
+}
+
+.secao a:not(.indice-grid a):hover {
+    color: var(--white);
+    border-color: var(--white);
+}
+
+
+/* ---------- IDENTIFICAÇÃO ---------- */
+
+.identidade-grid {
+    display: grid;
+    grid-template-columns: 1fr 230px;
+    gap: 35px;
+    align-items: center;
+}
+
+.identidade-info p {
+    padding: 8px 0;
+    margin: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.045);
+}
+
+.identidade-aside {
+    min-height: 190px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    border: 1px solid var(--border);
+    background: rgba(255, 255, 255, 0.018);
+}
+
+.grande-numero {
+    color: var(--white);
+    font-size: 5rem;
+    font-weight: 200;
+    line-height: 1;
+}
+
+.aside-legenda {
+    margin-top: 12px;
+    color: var(--gray);
+    font-size: 0.62rem;
+    letter-spacing: 3px;
+    text-align: center;
+}
+
+
+/* ---------- ÍNDICE ---------- */
+
+.indice-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px 30px;
+}
+
+.indice-grid a {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    padding: 13px 5px;
+    border-bottom: 1px solid var(--border);
+
+    color: var(--silver);
+    font-size: 0.85rem;
+
+    transition: color 0.25s, padding 0.25s;
+}
+
+.indice-grid a:hover {
+    padding-left: 12px;
+    color: var(--white);
+}
+
+.indice-grid a span {
+    color: var(--muted);
+    font-size: 0.7rem;
+}
+
+.indice-grid a b {
+    margin-left: auto;
+    color: var(--muted);
+    font-weight: 400;
+}
+
+
+/* ---------- APRESENTAÇÃO ---------- */
+
+.apresentacao-grid {
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    gap: 40px;
+    align-items: start;
+}
+
+.texto-apresentacao p {
+    line-height: 1.9;
+}
+
+.foto-perfil {
+    padding: 8px;
+    border: 1px solid var(--border);
+    background: var(--card);
+}
+
+.foto-perfil img {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    filter: grayscale(100%);
+    transition: filter 0.4s;
+}
+
+.foto-perfil:hover img {
+    filter: grayscale(35%);
+}
+
+.foto-perfil figcaption,
+.imagem-conteudo figcaption {
+    padding: 10px 3px 2px;
+    color: var(--gray);
+    font-size: 0.62rem;
+    letter-spacing: 1.5px;
+}
+
+
+/* ---------- CARDS / SONHOS ---------- */
+
+.flex {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.caixa {
+    min-height: 235px;
+    padding: 25px;
+
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+
+    transition: transform 0.3s, background 0.3s, border-color 0.3s;
+}
+
+.caixa:hover {
+    transform: translateY(-5px);
+    background: var(--card-hover);
+    border-color: var(--border-hover);
+}
+
+.card-numero {
+    color: var(--muted);
+    font-size: 0.65rem;
+    letter-spacing: 2px;
+}
+
+.caixa h3 {
+    margin-top: 22px;
+}
+
+.caixa p {
+    font-size: 0.84rem;
+    line-height: 1.8;
+}
+
+
+/* ---------- EVENTOS ---------- */
+
+.evento {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 25px;
+
+    padding: 25px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.evento:last-child {
+    border-bottom: 0;
+}
+
+.evento-data {
+    color: var(--gray);
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+.evento h3 {
+    margin-top: 0;
+}
+
+.evento h4 {
+    margin-top: 0;
+    color: var(--gray);
+}
+
+.evento-conteudo > p {
+    margin-top: 15px;
+}
+
+
+/* ---------- IMAGENS ---------- */
+
+figure {
+    margin-top: 20px;
+}
+
+.imagem-conteudo {
+    overflow: hidden;
+    border: 1px solid var(--border);
+    background: var(--card);
+}
+
+.imagem-conteudo img {
+    width: 100%;
+    max-height: 430px;
+    object-fit: cover;
+    filter: grayscale(100%);
+    transition: filter 0.4s, transform 0.5s;
+}
+
+.imagem-conteudo:hover img {
+    filter: grayscale(35%);
+    transform: scale(1.015);
+}
+
+
+/* ---------- LITERATURA / PROJETOS / CERTIFICADOS ---------- */
+
+.texto-introdutorio {
+    margin-bottom: 25px;
+}
+
+.obra,
+.projeto,
+.certificado,
+.mensagem {
+    margin-top: 22px;
+    padding: 25px;
+
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+}
+
+.obra h3,
+.projeto h3,
+.certificado h3,
+.mensagem h3 {
+    margin-top: 10px;
+}
+
+.introducao {
+    margin-bottom: 25px;
+    padding: 18px 22px;
+
+    background: rgba(255, 255, 255, 0.025);
+    border-left: 2px solid var(--silver);
+}
+
+.introducao p {
+    margin-bottom: 5px;
+}
+
+.rodape {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+
+    padding: 55px 20px;
+
+    border-top: 1px solid var(--border);
+    background: #030303;
+
+    text-align: center;
+}
+
+.rodape p {
+    margin-top: 10px;
+    color: var(--silver);
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+}
+
+.rodape > span {
+    color: var(--muted);
+    font-size: 0.62rem;
+    letter-spacing: 2px;
+}
+
+.voltar-topo {
+    margin-top: 18px;
+    color: var(--silver);
+    font-size: 0.65rem;
+    letter-spacing: 1.5px;
+    transition: color 0.25s;
+}
+
+.voltar-topo:hover {
+    color: var(--white);
+}
+
+.rodape .rodape-jp {
+    margin-top: 15px;
+    color: #555;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 4px;
+}
+
+
+/* ---------- ANIMAÇÕES ---------- */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ---------- RESPONSIVIDADE ---------- */
+
+@media (max-width: 768px) {
+    .topo {
+        min-height: 620px;
+    }
+
+    .navegacao {
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .nav-links {
+        justify-content: flex-end;
+        flex-wrap: wrap;
+        gap: 12px 18px;
+    }
+
+    .nav-links a {
+        font-size: 0.62rem;
+    }
+
+    .hero {
+        padding: 90px 0;
+    }
+
+    .hero h1 {
+        letter-spacing: -3px;
+    }
+
+    .hero-kanji {
+        right: 2%;
+        top: 40%;
+        font-size: 12rem;
+    }
+
+    .conteudo {
+        margin: 55px auto;
+    }
+
+    .secao {
+        padding: 30px;
+    }
+
+    .identidade-grid,
+    .apresentacao-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .identidade-aside {
+        min-height: 140px;
+    }
+
+    .foto-perfil {
+        max-width: 330px;
+    }
+
+    .flex {
+        grid-template-columns: 1fr;
+    }
+
+    .caixa {
+        min-height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .navegacao {
+        width: 90%;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-links {
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .hero {
+        padding: 75px 0;
+    }
+
+    .hero h1 {
+        font-size: 3rem;
+        letter-spacing: -2px;
+    }
+
+    .sobre-titulo {
+        font-size: 0.58rem;
+        letter-spacing: 3px;
+    }
+
+    .dados-capa {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .hero-kanji {
+        top: 47%;
+        right: -5%;
+        font-size: 9rem;
+    }
+
+    .hero-indicador {
+        right: 5%;
+        bottom: 20px;
+    }
+
+    .conteudo {
+        width: 92%;
+        margin: 35px auto;
+    }
+
+    .secao {
+        padding: 23px 19px;
+        margin-bottom: 22px;
+    }
+
+    .secao-topo {
+        gap: 12px;
+    }
+
+    .secao h2 {
+        font-size: 1.25rem;
+    }
+
+    .jp-label {
+        font-size: 0.58rem;
+        letter-spacing: 1.5px;
+    }
+
+    .indice-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .evento {
+        grid-template-columns: 1fr;
+        gap: 5px;
+    }
+
+    .evento-data {
+        font-size: 0.9rem;
+    }
+
+    .obra,
+    .projeto,
+    .certificado,
+    .mensagem {
+        padding: 19px;
+    }
+}
+
+
+/* ---------- SUBTÍTULOS JAPONESES ---------- */
+
+.jp-subtitulo {
+    display: block;
+    margin-top: -5px;
+    margin-bottom: 12px;
+
+    color: #686868;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.62rem;
+    font-weight: 300;
+    letter-spacing: 1.8px;
+    line-height: 1.7;
+}
+
+.jp-hero-subtitulo {
+    margin-top: 2px;
+    margin-bottom: 0;
+    color: #777777;
+    font-size: 0.68rem;
+    letter-spacing: 3px;
+}
+
+.caixa .jp-subtitulo {
+    margin-top: -7px;
+}
+
+.evento-conteudo .jp-subtitulo {
+    margin-top: -8px;
+}
+
+.obra .jp-subtitulo,
+.projeto .jp-subtitulo,
+.certificado .jp-subtitulo,
+.mensagem .jp-subtitulo {
+    margin-bottom: 14px;
+}
+
+@media (max-width: 480px) {
+    .jp-subtitulo {
+        font-size: 0.56rem;
+        letter-spacing: 1.2px;
+    }
+}
+
+/* ---------- DESTAQUE DOS TEXTOS JAPONESES ---------- */
+
+.jp-label,
+.jp-subtitulo,
+.jp-hero-subtitulo {
+    display: inline-block;
+    font-family: 'Noto Sans JP', sans-serif;
+    transition: color 0.3s ease, text-shadow 0.3s ease, transform 0.3s ease;
+    transform-origin: left center;
+}
+
+/* Identificadores japoneses das seções */
+.jp-label {
+    font-size: 0.82rem;
+    letter-spacing: 2.5px;
+}
+
+/* Subtítulos japoneses de cartões e conteúdos */
+.jp-subtitulo {
+    font-size: 0.78rem;
+    letter-spacing: 2px;
+}
+
+.jp-hero-subtitulo {
+    font-size: 0.82rem;
+    letter-spacing: 3.5px;
+}
+
+.jp-label:hover,
+.jp-subtitulo:hover,
+.jp-hero-subtitulo:hover {
+    color: #ff3030;
+    text-shadow: 0 0 9px rgba(255, 48, 48, 0.48),
+                 0 0 20px rgba(255, 48, 48, 0.20);
+    transform: translateX(4px) scale(1.06);
+    cursor: default;
+}
+
+/* Mantém a proporção dos textos em telas pequenas */
+@media (max-width: 480px) {
+    .jp-label {
+        font-size: 0.7rem;
+        letter-spacing: 1.8px;
+    }
+
+    .jp-subtitulo {
+        font-size: 0.68rem;
+        letter-spacing: 1.4px;
+    }
+
+    .jp-hero-subtitulo {
+        font-size: 0.72rem;
+        letter-spacing: 2.5px;
+    }
+}
+
+
+/* ---------- DESTAQUE NEON DOS TEXTOS JAPONESES ---------- */
+
+.jp-label,
+.jp-subtitulo,
+.jp-hero-subtitulo {
+    display: inline-block;
+    font-family: 'Noto Sans JP', sans-serif;
+    color: #d8d8d8;
+    text-shadow:
+        0 0 4px rgba(255, 255, 255, 0.48),
+        0 0 9px rgba(255, 255, 255, 0.28),
+        0 0 16px rgba(255, 255, 255, 0.14);
+    transition: color 0.3s ease, text-shadow 0.3s ease, transform 0.3s ease;
+    transform-origin: left center;
+}
+
+.jp-label {
+    font-size: 1rem;
+    letter-spacing: 3px;
+}
+
+.jp-subtitulo {
+    font-size: 0.92rem;
+    letter-spacing: 2.5px;
+    line-height: 1.8;
+}
+
+.jp-hero-subtitulo {
+    font-size: 1rem;
+    letter-spacing: 4px;
+}
+
+.jp-label:hover,
+.jp-subtitulo:hover,
+.jp-hero-subtitulo:hover {
+    color: #ff4545;
+    text-shadow:
+        0 0 5px rgba(255, 255, 255, 0.55),
+        0 0 10px rgba(255, 48, 48, 0.65),
+        0 0 22px rgba(255, 48, 48, 0.38);
+    transform: translateX(4px) scale(1.06);
+    cursor: default;
+}
+
+@media (max-width: 480px) {
+    .jp-label {
+        font-size: 0.84rem;
+        letter-spacing: 2px;
+    }
+
+    .jp-subtitulo {
+        font-size: 0.8rem;
+        letter-spacing: 1.7px;
+    }
+
+    .jp-hero-subtitulo {
+        font-size: 0.86rem;
+        letter-spacing: 2.5px;
+    }
+}
+
+
+/* ---------- BRILHO BRANCO EM TODOS OS TEXTOS ---------- */
+
+body,
+body * {
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.22),
+                 0 0 11px rgba(255, 255, 255, 0.12);
+}
+
+/* O brilho japonês permanece mais evidente, sem movimento */
+.jp-label,
+.jp-subtitulo,
+.jp-hero-subtitulo {
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.55),
+                 0 0 12px rgba(255, 255, 255, 0.32),
+                 0 0 20px rgba(255, 255, 255, 0.16);
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+    transform: none;
+}
+
+.jp-label:hover,
+.jp-subtitulo:hover,
+.jp-hero-subtitulo:hover {
+    color: #ff4545;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.55),
+                 0 0 10px rgba(255, 48, 48, 0.65),
+                 0 0 22px rgba(255, 48, 48, 0.38);
+    transform: none;
+    cursor: default;
+}
